@@ -1,11 +1,10 @@
-
-% Fix formatting errors in class jsonWriter pg114 lst 41
-%fix formatting listing 40
-%should code also have onehalfline spacing?
+% Layout Author: Luca Muscat
+% Website: www.github.com/lucamuscat
+% Repository: www.github.com/lucamuscat/LaTex-Layout
 
 \documentclass[a4paper, 12pt, titlepage]{article}
 
-%---------------Preamables---------------
+%--------------- Preambles ---------------
 \usepackage[none]{hyphenat}
 \usepackage{tikz}
 \usepackage{aeguill}
@@ -29,7 +28,7 @@
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 \newenvironment{code}{\captionsetup{type=listing}}{}
 % \sourcecode{Directory/NameOfFile}{Caption}{Label}
-% #1: Code Snippet Location
+% #1: Code Snippet
 % #2: Caption
 % #3: Reference Label
 \newcommand{\sourcecode}[3]{
@@ -44,6 +43,7 @@
   \textbf{Line #1} & #2 \\ \\
 }
 
+% \image{Scale}{Image Path}{Caption}{Reference Label}
 % #1 - Scale
 % #2 - Image path
 % #3 - Caption
