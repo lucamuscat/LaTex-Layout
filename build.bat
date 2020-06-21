@@ -1,1 +1,0 @@
-pdflatex -shell-escape -interaction=nonstopmode main_layout.tex && pdflatex -shell-escape -interaction=nonstopmode main_layout.tex
