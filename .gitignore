@@ -1,0 +1,7 @@
+*aux
+*log
+*out
+*pdf
+*toc
+_minted-main_layout/**
+collab/**

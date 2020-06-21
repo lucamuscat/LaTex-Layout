@@ -50,10 +50,10 @@
 % #4 - Reference Label
 \newcommand{\image}[4]{
   \begin{figure}[!h]
-  \centerline{\includegraphics[scale=#1]{#2}}
+    \centerline{\includegraphics[scale=#1]{#2}}
+    \captionof{figure}{#3}
+    \label{fig: #4}
   \end{figure}
-  \captionof{figure}{#3}
-   \label{fig: #4}
 }
 %---------------  End   ---------------
 
@@ -77,6 +77,9 @@
 %--------------- Content ---------------
 \begin{onehalfspacing}
 
+
+\bibliography{references}
+\bibliographystyle{ieeetr}
 \end{onehalfspacing}
 % ---------------   End  ----------------
 \end{document}
