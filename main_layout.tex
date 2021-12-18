@@ -5,43 +5,38 @@
 \documentclass[a4paper, 12pt, titlepage]{article}
 
 %--------------- Preambles ---------------
-\usepackage[none]{hyphenat}
-\usepackage{tikz}
-\usepackage{aeguill}
-\usepackage{setspace}
+\usepackage[none]{hyphenat} % Disables hyphenation in word wraps.
+\usepackage{setspace} % Provides line spacing options
 \usepackage{listings}
-\usepackage[newfloat]{minted}
-\usepackage[justification=centering]{caption}
+\usepackage[newfloat]{minted} % Code listings
+\usepackage[justification=centering]{caption} % Customization of captions
 \usepackage[margin=0.78in]{geometry}
-\usepackage{titlesec}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{multirow}
-\usepackage{tabularx}
+\usepackage{titlesec} % Provides various title styles
+\usepackage{graphicx} % Support for graphics
+\usepackage{float} 
+\usepackage{multirow} % Helps with creating tabular cells spanning multiple rows
 \usepackage{longtable}
 \usepackage{hyperref}
 
 \setlength{\footnotesep}{\baselineskip}
 
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
-\newenvironment{code}{\captionsetup{type=listing}}{}
+% Uncomment if alignment in tabular is necessary.
+% \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+% \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+% \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% \newenvironment{code}{\captionsetup{type=listing}}{}
 % \sourcecode{Directory/NameOfFile}{Caption}{Label}
 % #1: Code Snippet
 % #2: Caption
 % #3: Reference Label
-\newcommand{\sourcecode}[3]{
-    \begin{code}
-      \inputminted[linenos,numbersep=5pt,gobble=0,frame=lines,framesep=2mm,]{python}{#1}
-        \caption{#2}
-        \label{lst: #3}
-    \end{code}
-  }
-
-\newcommand{\explainline}[2]{
-  \textbf{Line #1} & #2 \\ \\
-}
+% Uncomment to be able to use code listing with syntax highlighting.
+%\newcommand{\sourcecode}[3]{
+%    \begin{code}
+%      \inputminted[linenos,numbersep=5pt,gobble=0,frame=lines,framesep=2mm,]{python}{#1}
+%        \caption{#2}
+%        \label{lst: #3}
+%    \end{code}
+%  }
 
 % \image{Scale}{Image Path}{Caption}{Reference Label}
 % #1 - Scale
@@ -49,7 +44,7 @@
 % #3 - Caption
 % #4 - Reference Label
 \newcommand{\image}[4]{
-  \begin{figure}[!h]
+  \begin{figure}[H]
     \centerline{\includegraphics[scale=#1]{#2}}
     \captionof{figure}{#3}
     \label{fig: #4}
@@ -64,22 +59,26 @@
 \title{Assignment}
 \author{Author}
 
+% Comment if section styling bothers you.
 \titleformat{\section}{\Large\bfseries\filcenter}{}{0em}{}
 \titleformat{\subsection}{\normalsize\bfseries\filcenter}{}{0em}{}
 \titleformat{\subsubsection}{\small\bfseries}{}{0em}{}
 \maketitle
 
 \pagebreak
+\pagenumbering{roman}
 \tableofcontents
 \pagebreak
 %---------------   End  ----------------
 
 %--------------- Content ---------------
+\pagenumbering{arabic}
 \begin{onehalfspacing}
 
 
-\bibliography{references}
-\bibliographystyle{ieeetr}
+% Uncomment if you will use references.
+% \bibliography{references}
+% \bibliographystyle{ieeetr}
 \end{onehalfspacing}
 % ---------------   End  ----------------
 \end{document}
