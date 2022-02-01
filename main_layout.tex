@@ -37,6 +37,7 @@
 % This lets you label your code as a listing whilst still having the option to cross
 % pages.
 \newenvironment{code}{\captionsetup{type=listing}}{}
+
 % \image{Scale}{Image Path}{Caption}{Reference Label}
 % #1 - Scale
 % #2 - Image path
@@ -61,16 +62,22 @@
 \titleformat{\section}{\Large\bfseries\filcenter}{}{0em}{}
 \titleformat{\subsection}{\normalsize\bfseries\filcenter}{}{0em}{}
 \titleformat{\subsubsection}{\small\bfseries}{}{0em}{}
-\maketitle
 
+\setcounter{page}{0}
+\maketitle
+% Uncomment if you want to omit the date in the tite page.
+% \date{}
 \pagebreak
 \pagenumbering{roman}
 \tableofcontents
+% \tableofcontents
+% \listoffigures
 \pagebreak
 %---------------   End  ----------------
 
 %--------------- Content ---------------
 \pagenumbering{arabic}
+% For one-line spacing, use singlespace
 \begin{onehalfspacing}
 
 
