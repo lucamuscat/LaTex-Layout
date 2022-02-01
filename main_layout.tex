@@ -19,7 +19,6 @@
 % \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 % \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 % \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
-% \newenvironment{code}{\captionsetup{type=listing}}{}
 % \sourcecode{Directory/NameOfFile}{Caption}{Label}
 % #1: Code Snippet
 % #2: Caption
@@ -33,6 +32,10 @@
 %    \end{code}
 %  }
 
+% If you want a code listing to cross pages, you cannot wrap it in a listing environment.
+% This lets you label your code as a listing whilst still having the option to cross
+% pages.
+\newenvironment{code}{\captionsetup{type=listing}}{}
 % \image{Scale}{Image Path}{Caption}{Reference Label}
 % #1 - Scale
 % #2 - Image path
