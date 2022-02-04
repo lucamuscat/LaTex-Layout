@@ -1,0 +1,55 @@
+% Adjust font size here if you want to make it smaller.
+\documentclass[a4paper, 12pt, titlepage]{article}
+
+%--------------- Preambles ---------------
+\usepackage[none]{hyphenat} % Disables hyphenation in word wraps.
+\usepackage{setspace} % Provides line spacing options
+\usepackage{listings}
+\usepackage[newfloat]{minted} % Code listings
+\usepackage[justification=centering]{caption} % Customization of captions
+\usepackage[margin=0.78in]{geometry}
+\usepackage{titlesec} % Provides various title styles
+\usepackage{graphicx} % Support for graphics
+\usepackage{float} 
+\usepackage{multirow} % Helps with creating tabular cells spanning multiple rows
+\usepackage{longtable}
+\usepackage[bottom]{footmisc} % Keep footnotes at the bottom of the page.
+\usepackage[hidelinks]{hyperref} % Get rid of hyperref's ugly link borders.
+
+% Uncomment if alignment in tabular is necessary.
+% \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+% \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+% \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% \sourcecode{Directory/NameOfFile}{Caption}{Label}
+% #1: Code Snippet
+% #2: Caption
+% #3: Reference Label
+% Uncomment to be able to use code listing with syntax highlighting.
+%\newcommand{\sourcecode}[3]{
+%    \begin{code}
+%      \inputminted[linenos,numbersep=5pt,gobble=0,frame=lines,framesep=2mm,]{python}{#1}
+%        \caption{#2}
+%        \label{lst: #3}
+%    \end{code}
+%  }
+
+% If you want a code listing to cross pages, you cannot wrap it in a listing environment.
+% This lets you label your code as a listing whilst still having the option to cross
+% pages.
+\newenvironment{code}{\captionsetup{type=listing}}{}
+
+% \image{Scale}{Image Path}{Caption}{Reference Label}
+% #1 - Scale
+% #2 - Image path
+% #3 - Caption
+% #4 - Reference Label
+\newcommand{\image}[4]{
+  \begin{figure}[H]
+    \captionsetup{type=listing}
+    \centerline{\includegraphics[scale=#1]{#2}}
+    % Fix hypcap=true warning
+    % https://tex.stackexchange.com/q/32344
+    \caption{#3 \label{fig: #4}}
+  \end{figure}
+}
+%---------------  End   ---------------
