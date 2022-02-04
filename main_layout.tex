@@ -45,9 +45,11 @@
 % #4 - Reference Label
 \newcommand{\image}[4]{
   \begin{figure}[H]
+    \captionsetup{type=listing}
     \centerline{\includegraphics[scale=#1]{#2}}
-    \captionof{figure}{#3}
-    \label{fig: #4}
+    % Fix hypcap=true warning
+    % https://tex.stackexchange.com/q/32344
+    \caption{#3 \label{fig: #4}}
   \end{figure}
 }
 %---------------  End   ---------------
