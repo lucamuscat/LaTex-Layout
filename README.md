@@ -1,17 +1,15 @@
-This is the latex layout that I commonly use.
-
 # Prerequisites
 * `make` ([instructions](https://askubuntu.com/q/161104))
 * `pdflatex` ([instructions](https://www.latex-project.org/get/))
 
 # Instructions
-## Compiling the tex document
-Type `make` or `make content` in order to create the PDF file. Call `make references` to compile the references and the content.
-## Rename PDF output
-Go into the Makefile and change the `PROJECT_NAME` variable.
+## Building the Document
+Call `make` to compile the document. In order to correctly compile new references, call `make references`.
 
-## Renaming the main_layout.tex
-If you are going to rename `main_layout.tex`, don't forget to change the `TARGET_FILE_NAME` variable to the name of the new name (exclude `.tex` from the variable).
+## Renaming `main_layout.tex`
+Ensure that the `TARGET_FILE_NAME` variable inside the Makefile has the name of the main latex file that is to be compiled. By default, the main latex file is called `main_layout.tex`.
+
+When renaming the main latex file, remember to update `TARGET_FILE_NAME` with the new name.
 
 ## Importing and modifying packages
 The entire preamble is found in the `preamble.tex` file. You may find all the packages there.
